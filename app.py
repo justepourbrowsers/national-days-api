@@ -1,4 +1,4 @@
-"""National Holidays API - REST API serving the national day of 195 countries."""
+"""National Days API - REST API serving the national day of 195 countries."""
 import json
 from pathlib import Path
 
@@ -19,7 +19,7 @@ app.json.sort_keys = False  # keep the field order of the JSON file
 app.json.ensure_ascii = False
 
 app.config["SWAGGER"] = {
-    "title": "National Holidays API",
+    "title": "National Days API",
     "uiversion": 3,
     "specs_route": "/apidocs/",
 }
@@ -27,7 +27,7 @@ Swagger(
     app,
     template={
         "info": {
-            "title": "National Holidays API",
+            "title": "National Days API",
             "description": "National day, capital, currency and key facts for 195 countries.",
             "version": "1.0.0",
         }
@@ -62,11 +62,11 @@ def health():
     return jsonify({"status": "ok", "countries": len(NATIONALDAYS)})
 
 
-@app.get("/holidays")
-def list_holidays():
+@app.get("/national-days")
+def list_national_days():
     """List all national days, optionally filtered.
     ---
-    tags: [holidays]
+    tags: [national-days]
     parameters:
       - name: continent
         in: query
@@ -96,13 +96,13 @@ def list_holidays():
     return jsonify(result)
 
 
-@app.get("/holidays/id/<int:holiday_id>")
-def get_by_id(holiday_id):
+@app.get("/national-days/id/<int:day_id>")
+def get_by_id(day_id):
     """Get a national day by its id.
     ---
-    tags: [holidays]
+    tags: [national-days]
     parameters:
-      - name: holiday_id
+      - name: day_id
         in: path
         type: integer
         required: true
@@ -112,15 +112,15 @@ def get_by_id(holiday_id):
       404:
         description: Unknown id
     """
-    holiday = BY_ID.get(holiday_id)
-    return jsonify(holiday) if holiday else not_found("Holiday not found")
+    national_day = BY_ID.get(day_id)
+    return jsonify(national_day) if national_day else not_found("National day not found")
 
 
-@app.get("/holidays/country/<country_name>")
+@app.get("/national-days/country/<country_name>")
 def get_by_country(country_name):
     """Get a national day by country name (case-insensitive).
     ---
-    tags: [holidays]
+    tags: [national-days]
     parameters:
       - name: country_name
         in: path
@@ -133,15 +133,15 @@ def get_by_country(country_name):
       404:
         description: Unknown country
     """
-    holiday = BY_COUNTRY.get(country_name.strip().lower())
-    return jsonify(holiday) if holiday else not_found("Country not found")
+    national_day = BY_COUNTRY.get(country_name.strip().lower())
+    return jsonify(national_day) if national_day else not_found("Country not found")
 
 
-@app.get("/holidays/iso/<iso_code>")
+@app.get("/national-days/iso/<iso_code>")
 def get_by_iso(iso_code):
     """Get a national day by ISO 3166-1 alpha-3 code.
     ---
-    tags: [holidays]
+    tags: [national-days]
     parameters:
       - name: iso_code
         in: path
@@ -154,15 +154,15 @@ def get_by_iso(iso_code):
       404:
         description: Unknown ISO code
     """
-    holiday = BY_ISO.get(iso_code.strip().upper())
-    return jsonify(holiday) if holiday else not_found("ISO code not found")
+    national_day = BY_ISO.get(iso_code.strip().upper())
+    return jsonify(national_day) if national_day else not_found("ISO code not found")
 
 
-@app.get("/holidays/description/<keyword>")
+@app.get("/national-days/description/<keyword>")
 def search_by_description(keyword):
     """Search national days by keyword in holiday name or description.
     ---
-    tags: [holidays]
+    tags: [national-days]
     parameters:
       - name: keyword
         in: path
@@ -177,7 +177,7 @@ def search_by_description(keyword):
     """
     kw = keyword.strip().lower()
     matches = [d for d in NATIONALDAYS if kw in d["holiday"].lower() or kw in d["description"].lower()]
-    return jsonify(matches) if matches else not_found("No holiday matches this keyword")
+    return jsonify(matches) if matches else not_found("No national day matches this keyword")
 
 
 if __name__ == "__main__":

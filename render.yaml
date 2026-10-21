@@ -1,7 +1,7 @@
 # Render Blueprint: deploys the API as a free web service
 services:
   - type: web
-    name: national-holidays-api
+    name: national-days-api
     runtime: python
     plan: free            # without this line Render picks a paid instance
     region: frankfurt     # closest region to Germany
