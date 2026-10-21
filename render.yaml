@@ -1,0 +1,11 @@
+# Render Blueprint: deploys the API as a free web service
+services:
+  - type: web
+    name: national-holidays-api
+    runtime: python
+    plan: free            # without this line Render picks a paid instance
+    region: frankfurt     # closest region to Germany
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:$PORT
+    healthCheckPath: /health
+    autoDeployTrigger: commit
