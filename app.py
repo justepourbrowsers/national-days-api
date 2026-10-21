@@ -36,12 +36,26 @@ Swagger(
 
 NATIONALDAYS = load_nationaldays()
 BY_ID = {d["id"]: d for d in NATIONALDAYS}
-BY_COUNTRY = {d["country"].lower(): d for d in NATIONALDAYS}
-BY_ISO = {d["iso"].upper(): d for d in NATIONALDAYS}
+# Lookup by current name and by former/alternative names (e.g. turkey -> türkiye)
+BY_COUNTRY = {}
+for _d in NATIONALDAYS:
+    for _name in [_d["country"], *_d["alternative_names"]]:
+        BY_COUNTRY[_name.lower()] = _d
+BY_ISO = {}
+for _d in NATIONALDAYS:
+    BY_ISO[_d["iso"].upper()] = _d   # alpha-3, e.g. FRA
+    BY_ISO[_d["iso2"].upper()] = _d  # alpha-2, e.g. FR
+
+SORTABLE_FIELDS = ["id", "country", "date", "event_year", "first_celebration", "creation",
+                   "population", "area", "capital", "continent", "currency_code"]
 
 
 def not_found(message):
     return jsonify({"error": message}), 404
+
+
+def bad_request(message):
+    return jsonify({"error": message}), 400
 
 
 @app.get("/")
@@ -64,7 +78,7 @@ def health():
 
 @app.get("/national-days")
 def list_national_days():
-    """List all national days, optionally filtered.
+    """List all national days, with optional filters and sorting.
     ---
     tags: [national-days]
     parameters:
@@ -72,27 +86,67 @@ def list_national_days():
         in: query
         type: string
         required: false
-        description: Filter by continent (e.g. europe, asia, africa)
+        description: Filter by continent (africa, america, asia, europe, oceania)
       - name: month
         in: query
         type: integer
         required: false
         description: Filter by month of the national day (1-12)
+      - name: currency_code
+        in: query
+        type: string
+        required: false
+        description: Filter by ISO 4217 currency code, e.g. EUR, USD, XOF
+      - name: language
+        in: query
+        type: string
+        required: false
+        description: Filter by main language, e.g. french, arabic
+      - name: sort
+        in: query
+        type: string
+        required: false
+        enum: [id, country, date, event_year, first_celebration, creation, population, area, capital, continent, currency_code]
+        description: Field to sort by (BC years are negative, so they sort first)
+      - name: order
+        in: query
+        type: string
+        required: false
+        enum: [asc, desc]
+        default: asc
+        description: Sort direction (entries without a value are always listed last)
     responses:
       200:
         description: List of national days
       400:
-        description: Invalid month
+        description: Invalid parameter
     """
     result = NATIONALDAYS
-    continent = request.args.get("continent")
-    if continent:
-        result = [d for d in result if d["continent"].lower() == continent.lower()]
+    for field in ("continent", "language"):
+        value = request.args.get(field)
+        if value:
+            result = [d for d in result if d[field].lower() == value.strip().lower()]
+    currency_code = request.args.get("currency_code")
+    if currency_code:
+        result = [d for d in result if d["currency_code"] == currency_code.strip().upper()]
     month = request.args.get("month")
     if month is not None:
         if not month.isdigit() or not 1 <= int(month) <= 12:
-            return jsonify({"error": "month must be an integer between 1 and 12"}), 400
-        result = [d for d in result if int(d["date"][5:7]) == int(month)]
+            return bad_request("month must be an integer between 1 and 12")
+        result = [d for d in result if int(d["date"][:2]) == int(month)]
+
+    sort = request.args.get("sort")
+    order = request.args.get("order", "asc").lower()
+    if order not in ("asc", "desc"):
+        return bad_request("order must be asc or desc")
+    if sort:
+        if sort not in SORTABLE_FIELDS:
+            return bad_request(f"sort must be one of: {', '.join(SORTABLE_FIELDS)}")
+        with_value = [d for d in result if d[sort] is not None]
+        without_value = [d for d in result if d[sort] is None]
+        result = sorted(with_value, key=lambda d: d[sort], reverse=order == "desc") + without_value
+    elif order == "desc":
+        result = list(reversed(result))
     return jsonify(result)
 
 
@@ -118,7 +172,7 @@ def get_by_id(day_id):
 
 @app.get("/national-days/country/<country_name>")
 def get_by_country(country_name):
-    """Get a national day by country name (case-insensitive).
+    """Get a national day by country name (case-insensitive, former names accepted).
     ---
     tags: [national-days]
     parameters:
@@ -126,7 +180,7 @@ def get_by_country(country_name):
         in: path
         type: string
         required: true
-        description: English country name, e.g. france, germany
+        description: English country name, e.g. france, germany, turkey (-> türkiye)
     responses:
       200:
         description: National day found
@@ -139,7 +193,7 @@ def get_by_country(country_name):
 
 @app.get("/national-days/iso/<iso_code>")
 def get_by_iso(iso_code):
-    """Get a national day by ISO 3166-1 alpha-3 code.
+    """Get a national day by ISO 3166-1 code (alpha-3 or alpha-2).
     ---
     tags: [national-days]
     parameters:
@@ -147,7 +201,7 @@ def get_by_iso(iso_code):
         in: path
         type: string
         required: true
-        description: ISO alpha-3 code, e.g. FRA, DEU
+        description: ISO code, e.g. FRA or FR, DEU or DE
     responses:
       200:
         description: National day found
