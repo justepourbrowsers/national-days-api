@@ -1,5 +1,6 @@
 """National Days API - REST API serving the national day of 195 countries."""
 import json
+import unicodedata
 from pathlib import Path
 
 from flasgger import Swagger
@@ -56,6 +57,14 @@ def not_found(message):
 
 def bad_request(message):
     return jsonify({"error": message}), 400
+
+
+def sort_key(value):
+    """Accent- and case-insensitive key for strings (türkiye sorts like turkiye), numbers unchanged."""
+    if isinstance(value, str):
+        decomposed = unicodedata.normalize("NFKD", value)
+        return "".join(c for c in decomposed if not unicodedata.combining(c)).casefold()
+    return value
 
 
 @app.get("/")
@@ -144,7 +153,7 @@ def list_national_days():
             return bad_request(f"sort must be one of: {', '.join(SORTABLE_FIELDS)}")
         with_value = [d for d in result if d[sort] is not None]
         without_value = [d for d in result if d[sort] is None]
-        result = sorted(with_value, key=lambda d: d[sort], reverse=order == "desc") + without_value
+        result = sorted(with_value, key=lambda d: sort_key(d[sort]), reverse=order == "desc") + without_value
     elif order == "desc":
         result = list(reversed(result))
     return jsonify(result)

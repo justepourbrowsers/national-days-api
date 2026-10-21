@@ -32,8 +32,10 @@
           "script": {
             "type": "text/javascript",
             "exec": [
+              "{",
               "pm.test('Status 200', () => pm.response.to.have.status(200));",
-              "pm.test('195 countries', () => pm.expect(pm.response.json().countries).to.eql(195));"
+              "pm.test('195 countries', () => pm.expect(pm.response.json().countries).to.eql(195));",
+              "}"
             ]
           }
         }
@@ -66,9 +68,13 @@
           "script": {
             "type": "text/javascript",
             "exec": [
+              "{",
+              "const key = s => s.normalize('NFKD').replace(/[\\u0300-\\u036f]/g, '').toLowerCase();",
               "const names = pm.response.json().map(d => d.country);",
+              "const expected = [...names].sort((a, b) => (key(a) < key(b) ? -1 : key(a) > key(b) ? 1 : 0));",
               "pm.test('Status 200', () => pm.response.to.have.status(200));",
-              "pm.test('Sorted alphabetically', () => pm.expect(names).to.eql([...names].sort((a, b) => a.localeCompare(b, 'en'))));"
+              "pm.test('Sorted alphabetically (accent-insensitive)', () => pm.expect(names).to.eql(expected));",
+              "}"
             ]
           }
         }
@@ -105,8 +111,10 @@
           "script": {
             "type": "text/javascript",
             "exec": [
+              "{",
               "const years = pm.response.json().map(d => d.first_celebration).filter(y => y !== null);",
-              "pm.test('Descending order', () => pm.expect(years).to.eql([...years].sort((a, b) => b - a)));"
+              "pm.test('Descending order', () => pm.expect(years).to.eql([...years].sort((a, b) => b - a)));",
+              "}"
             ]
           }
         }
@@ -143,9 +151,11 @@
           "script": {
             "type": "text/javascript",
             "exec": [
+              "{",
               "const data = pm.response.json();",
               "pm.test('Only EUR', () => data.forEach(d => pm.expect(d.currency_code).to.eql('EUR')));",
-              "pm.test('Croatia and Bulgaria included', () => pm.expect(data.map(d => d.country)).to.include.members(['croatia', 'bulgaria']));"
+              "pm.test('Croatia and Bulgaria included', () => pm.expect(data.map(d => d.country)).to.include.members(['croatia', 'bulgaria']));",
+              "}"
             ]
           }
         }
@@ -174,9 +184,11 @@
           "script": {
             "type": "text/javascript",
             "exec": [
+              "{",
               "const d = pm.response.json();",
               "pm.test('Event year is BC (negative)', () => pm.expect(d.event_year).to.eql(-660));",
-              "pm.test('Event date ISO 8601', () => pm.expect(d.event_date).to.eql('-0660-02-11'));"
+              "pm.test('Event date ISO 8601', () => pm.expect(d.event_date).to.eql('-0660-02-11'));",
+              "}"
             ]
           }
         }
@@ -205,7 +217,9 @@
           "script": {
             "type": "text/javascript",
             "exec": [
-              "pm.test('Resolved to new name', () => pm.expect(pm.response.json().country).to.eql('türkiye'));"
+              "{",
+              "pm.test('Resolved to new name', () => pm.expect(pm.response.json().country).to.eql('türkiye'));",
+              "}"
             ]
           }
         }
@@ -234,7 +248,9 @@
           "script": {
             "type": "text/javascript",
             "exec": [
-              "pm.test('France', () => pm.expect(pm.response.json().iso).to.eql('FRA'));"
+              "{",
+              "pm.test('France', () => pm.expect(pm.response.json().iso).to.eql('FRA'));",
+              "}"
             ]
           }
         }
@@ -263,8 +279,10 @@
           "script": {
             "type": "text/javascript",
             "exec": [
+              "{",
               "pm.test('Status 404', () => pm.response.to.have.status(404));",
-              "pm.test('Error message', () => pm.expect(pm.response.json()).to.have.property('error'));"
+              "pm.test('Error message', () => pm.expect(pm.response.json()).to.have.property('error'));",
+              "}"
             ]
           }
         }
@@ -297,7 +315,9 @@
           "script": {
             "type": "text/javascript",
             "exec": [
-              "pm.test('Status 400', () => pm.response.to.have.status(400));"
+              "{",
+              "pm.test('Status 400', () => pm.response.to.have.status(400));",
+              "}"
             ]
           }
         }

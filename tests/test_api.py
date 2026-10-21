@@ -76,13 +76,17 @@ def test_not_found(client, url):
 # --- Sorting and filtering ---
 
 def test_sort_by_country_alphabetical(client):
+    from app import sort_key
     names = [d["country"] for d in client.get("/national-days?sort=country").get_json()]
-    assert names == sorted(names)
+    assert names == sorted(names, key=sort_key)
+    # accented names sort with their base letter, not after "z"
+    assert names.index("türkiye") < names.index("tuvalu")
 
 
 def test_sort_by_country_desc(client):
+    from app import sort_key
     names = [d["country"] for d in client.get("/national-days?sort=country&order=desc").get_json()]
-    assert names == sorted(names, reverse=True)
+    assert names == sorted(names, key=sort_key, reverse=True)
 
 
 def test_sort_by_first_celebration_puts_nulls_last(client):
