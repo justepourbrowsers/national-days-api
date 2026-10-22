@@ -5,6 +5,7 @@ from pathlib import Path
 
 from flasgger import Swagger
 from flask import Flask, abort, jsonify, redirect, request
+from flask_cors import CORS
 
 DATA_FILE = Path(__file__).parent / "data" / "nationaldays.json"
 
@@ -18,6 +19,8 @@ def load_nationaldays(path=DATA_FILE):
 app = Flask(__name__)
 app.json.sort_keys = False  # keep the field order of the JSON file
 app.json.ensure_ascii = False
+# Allow browsers to call the API from any website (public, read-only data)
+CORS(app)
 
 app.config["SWAGGER"] = {
     "title": "National Days API",
