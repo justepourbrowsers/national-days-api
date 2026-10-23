@@ -6425,7 +6425,24 @@
         "public_holiday": true
       }
     ],
-    "components": [],
+    "components": [
+      {
+        "name": "Grande-Terre (Mayotte)",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Petite-Terre (Mayotte)",
+        "alternative_names": [
+          "pamandzi"
+        ],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      }
+    ],
     "description": "national day of france, applies as part of france: commemorates the storming of the bastille in 1789.",
     "event_date": "1789-07-14",
     "event_year": 1789,
@@ -6556,7 +6573,27 @@
     "movable": false,
     "inherited": true,
     "local_holidays": [],
-    "components": [],
+    "components": [
+      {
+        "name": "Saint-Pierre",
+        "alternative_names": [
+          "saint pierre island"
+        ],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Miquelon-Langlade",
+        "alternative_names": [
+          "miquelon",
+          "langlade"
+        ],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      }
+    ],
     "description": "national day of france, applies as part of france: commemorates the storming of the bastille in 1789.",
     "event_date": "1789-07-14",
     "event_year": 1789,
@@ -6878,7 +6915,134 @@
     "movable": false,
     "inherited": false,
     "local_holidays": [],
-    "components": [],
+    "components": [
+      {
+        "name": "Streymoy",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Eysturoy",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Vágar",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Suðuroy",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Sandoy",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Borðoy",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Viðoy",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Kunoy",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Kalsoy",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Svínoy",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Fugloy",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Nólsoy",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Mykines",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Skúvoy",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Hestur",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Stóra Dímun",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Koltur",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Lítla Dímun",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      }
+    ],
     "description": "honours king olaf ii of norway, killed at the battle of stiklestad in 1030; celebrated since the middle ages.",
     "event_date": "1030-07-29",
     "event_year": 1030,
@@ -6914,7 +7078,35 @@
     "movable": false,
     "inherited": false,
     "local_holidays": [],
-    "components": [],
+    "components": [
+      {
+        "name": "Penghu",
+        "alternative_names": [
+          "pescadores"
+        ],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Kinmen",
+        "alternative_names": [
+          "quemoy"
+        ],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Matsu Islands",
+        "alternative_names": [
+          "matsu"
+        ],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      }
+    ],
     "description": "commemorates the wuchang uprising of 1911 that led to the founding of the republic of china.",
     "event_date": "1911-10-10",
     "event_year": 1911,
@@ -6978,7 +7170,66 @@
     "movable": false,
     "inherited": false,
     "local_holidays": [],
-    "components": [],
+    "components": [
+      {
+        "name": "Tutuila",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Aunu'u",
+        "alternative_names": [
+          "aunuu"
+        ],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Ofu",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Olosega",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Ta'u",
+        "alternative_names": [
+          "tau"
+        ],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Rose Atoll",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Swains Island",
+        "alternative_names": [
+          "swains",
+          "olohega"
+        ],
+        "iso_3166_2": null,
+        "claimed_by": [
+          "TKL"
+        ],
+        "local_holidays": []
+      }
+    ],
     "description": "commemorates the raising of the us flag on tutuila in 1900.",
     "event_date": "1900-04-17",
     "event_year": 1900,
@@ -7008,7 +7259,15 @@
     "movable": false,
     "inherited": false,
     "local_holidays": [],
-    "components": [],
+    "components": [
+      {
+        "name": "Sombrero",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      }
+    ],
     "description": "commemorates the anguilla revolution of 1967 against rule from saint kitts.",
     "event_date": "1967-05-30",
     "event_year": 1967,
@@ -7182,7 +7441,36 @@
     "movable": true,
     "inherited": false,
     "local_holidays": [],
-    "components": [],
+    "components": [
+      {
+        "name": "Tortola",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Virgin Gorda",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Anegada",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Jost Van Dyke",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      }
+    ],
     "description": "first monday of july; renamed from territory day in 2021, which marked the separate colony status of 1 july 1956.",
     "event_date": "1956-07-01",
     "event_year": 1956,
@@ -7212,7 +7500,29 @@
     "movable": true,
     "inherited": false,
     "local_holidays": [],
-    "components": [],
+    "components": [
+      {
+        "name": "Grand Cayman",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Cayman Brac",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Little Cayman",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      }
+    ],
     "description": "first monday of july; commemorates the first written constitution, in force on 4 july 1959.",
     "event_date": "1959-07-04",
     "event_year": 1959,
@@ -7275,7 +7585,56 @@
     "movable": false,
     "inherited": false,
     "local_holidays": [],
-    "components": [],
+    "components": [
+      {
+        "name": "West Island",
+        "alternative_names": [
+          "pulu panjang"
+        ],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Home Island",
+        "alternative_names": [
+          "pulu selma"
+        ],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Direction Island",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Horsburgh Island",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "South Island",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "North Keeling Island",
+        "alternative_names": [
+          "north keeling"
+        ],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      }
+    ],
     "description": "commemorates the 1984 un-supervised act of self-determination in which islanders chose integration with australia.",
     "event_date": "1984-04-06",
     "event_year": 1984,
@@ -7313,7 +7672,115 @@
         "public_holiday": true
       }
     ],
-    "components": [],
+    "components": [
+      {
+        "name": "Rarotonga",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Aitutaki",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Mangaia",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Atiu",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Mauke",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Mitiaro",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Manuae",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Takutea",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Palmerston",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Pukapuka",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Nassau",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Suwarrow",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Manihiki",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Rakahanga",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Penrhyn",
+        "alternative_names": [
+          "tongareva"
+        ],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      }
+    ],
     "description": "commemorates self-government in free association with new zealand under the 1965 constitution.",
     "event_date": "1965-08-04",
     "event_year": 1965,
@@ -7382,7 +7849,26 @@
     "movable": false,
     "inherited": false,
     "local_holidays": [],
-    "components": [],
+    "components": [
+      {
+        "name": "East Falkland",
+        "alternative_names": [
+          "isla soledad"
+        ],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "West Falkland",
+        "alternative_names": [
+          "gran malvina"
+        ],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      }
+    ],
     "description": "commemorates the end of the argentine occupation in 1982; sovereignty is claimed by argentina.",
     "event_date": "1982-06-14",
     "event_year": 1982,
@@ -7476,7 +7962,33 @@
     "movable": false,
     "inherited": false,
     "local_holidays": [],
-    "components": [],
+    "components": [
+      {
+        "name": "Alderney",
+        "alternative_names": [
+          "aurigny"
+        ],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Sark",
+        "alternative_names": [
+          "sercq"
+        ],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Herm",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      }
+    ],
     "description": "commemorates the end of the german occupation in 1945.",
     "event_date": "1945-05-09",
     "event_year": 1945,
@@ -7506,7 +8018,38 @@
     "movable": false,
     "inherited": false,
     "local_holidays": [],
-    "components": [],
+    "components": [
+      {
+        "name": "Hong Kong Island",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Kowloon",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "New Territories",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Lantau Island",
+        "alternative_names": [
+          "lantau"
+        ],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      }
+    ],
     "description": "marks the transfer of sovereignty from the united kingdom to china in 1997.",
     "event_date": "1997-07-01",
     "event_year": 1997,
@@ -7600,7 +8143,36 @@
     "movable": false,
     "inherited": false,
     "local_holidays": [],
-    "components": [],
+    "components": [
+      {
+        "name": "Macau Peninsula",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Taipa",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Coloane",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Cotai",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      }
+    ],
     "description": "marks the transfer of sovereignty from portugal to china in 1999.",
     "event_date": "1999-12-20",
     "event_year": 1999,
@@ -7690,7 +8262,22 @@
     "movable": false,
     "inherited": false,
     "local_holidays": [],
-    "components": [],
+    "components": [
+      {
+        "name": "Phillip Island",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Nepean Island",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      }
+    ],
     "description": "commemorates the arrival of the pitcairn islanders, descendants of the bounty mutineers, in 1856.",
     "event_date": "1856-06-08",
     "event_year": 1856,
@@ -7720,7 +8307,115 @@
     "movable": false,
     "inherited": false,
     "local_holidays": [],
-    "components": [],
+    "components": [
+      {
+        "name": "Saipan",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Tinian",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Rota",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Aguijan",
+        "alternative_names": [
+          "aguigan",
+          "goat island"
+        ],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Farallon de Medinilla",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Anatahan",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Sarigan",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Guguan",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Alamagan",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Pagan",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Agrihan",
+        "alternative_names": [
+          "agrigan"
+        ],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Asuncion",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Maug Islands",
+        "alternative_names": [
+          "maug"
+        ],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Farallon de Pajaros",
+        "alternative_names": [
+          "uracas"
+        ],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      }
+    ],
     "description": "commemorates the establishment of the commonwealth in 1978.",
     "event_date": "1978-01-08",
     "event_year": 1978,
@@ -7752,7 +8447,42 @@
     "movable": false,
     "inherited": false,
     "local_holidays": [],
-    "components": [],
+    "components": [
+      {
+        "name": "Pitcairn Island",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Henderson Island",
+        "alternative_names": [
+          "henderson"
+        ],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Ducie Island",
+        "alternative_names": [
+          "ducie"
+        ],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Oeno Island",
+        "alternative_names": [
+          "oeno"
+        ],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      }
+    ],
     "description": "commemorates the burning of hms bounty by the mutineers at pitcairn in 1790.",
     "event_date": "1790-01-23",
     "event_year": 1790,
@@ -7782,7 +8512,31 @@
     "movable": false,
     "inherited": false,
     "local_holidays": [],
-    "components": [],
+    "components": [
+      {
+        "name": "Vieques",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Culebra",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Mona Island",
+        "alternative_names": [
+          "mona"
+        ],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      }
+    ],
     "description": "commemorates the constitution of the commonwealth of puerto rico in 1952.",
     "event_date": "1952-07-25",
     "event_year": 1952,
@@ -7963,7 +8717,29 @@
     "movable": false,
     "inherited": false,
     "local_holidays": [],
-    "components": [],
+    "components": [
+      {
+        "name": "Atafu",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Nukunonu",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Fakaofo",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      }
+    ],
     "description": "marks the entry into force in 1983 of the treaty of tokehega, under which the united states recognised new zealand sovereignty over tokelau.",
     "event_date": "1983-09-03",
     "event_year": 1983,
@@ -7993,7 +8769,66 @@
     "movable": true,
     "inherited": true,
     "local_holidays": [],
-    "components": [],
+    "components": [
+      {
+        "name": "Providenciales",
+        "alternative_names": [
+          "provo"
+        ],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "West Caicos",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "North Caicos",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Middle Caicos",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "East Caicos",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "South Caicos",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Grand Turk",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Salt Cay",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      }
+    ],
     "description": "national day of united kingdom, applies as part of united kingdom: the united kingdom has no official national day; the sovereign's official birthday (second saturday of june) is used as national day abroad.",
     "event_date": null,
     "event_year": null,
@@ -8027,7 +8862,43 @@
     "movable": false,
     "inherited": false,
     "local_holidays": [],
-    "components": [],
+    "components": [
+      {
+        "name": "Saint Croix",
+        "alternative_names": [
+          "st croix",
+          "sainte-croix"
+        ],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Saint Thomas",
+        "alternative_names": [
+          "st thomas"
+        ],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Saint John",
+        "alternative_names": [
+          "st john"
+        ],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      },
+      {
+        "name": "Water Island",
+        "alternative_names": [],
+        "iso_3166_2": null,
+        "claimed_by": [],
+        "local_holidays": []
+      }
+    ],
     "description": "commemorates the transfer of the islands from denmark to the united states in 1917.",
     "event_date": "1917-03-31",
     "event_year": 1917,
