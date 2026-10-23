@@ -1,4 +1,4 @@
-"""National Days API - REST API serving the national day of 195 countries."""
+"""National Days API - REST API serving the national day of 250 countries and territories."""
 import json
 import unicodedata
 from pathlib import Path
@@ -32,8 +32,8 @@ Swagger(
     template={
         "info": {
             "title": "National Days API",
-            "description": "National day, capital, currency and key facts for 195 countries.",
-            "version": "1.0.0",
+            "description": "National day, capital, currency and key facts for 250 countries and territories.",
+            "version": "1.1.0",
         }
     },
 )
@@ -98,7 +98,7 @@ def list_national_days():
         in: query
         type: string
         required: false
-        description: Filter by continent (africa, america, asia, europe, oceania)
+        description: Filter by continent (africa, america, antarctica, asia, europe, oceania)
       - name: month
         in: query
         type: integer
