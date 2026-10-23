@@ -137,7 +137,7 @@ def list_national_days():
     for field in ("continent", "language"):
         value = request.args.get(field)
         if value:
-            result = [d for d in result if d[field].lower() == value.strip().lower()]
+            result = [d for d in result if (d[field] or "").lower() == value.strip().lower()]
     currency_code = request.args.get("currency_code")
     if currency_code:
         result = [d for d in result if d["currency_code"] == currency_code.strip().upper()]

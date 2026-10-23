@@ -13,7 +13,7 @@ def client():
 def test_health(client):
     r = client.get("/health")
     assert r.status_code == 200
-    assert r.get_json() == {"status": "ok", "countries": 195}
+    assert r.get_json() == {"status": "ok", "countries": 250}
 
 
 def test_root_redirects_to_swagger(client):
@@ -30,7 +30,11 @@ def test_swagger_spec_lists_all_routes(client):
 
 
 def test_list_all(client):
-    assert len(client.get("/national-days").get_json()) == 195
+    data = client.get("/national-days").get_json()
+    assert len(data) == 250
+    # 193 UN members + 2 observers (Vatican, Palestine)
+    assert sum(d["status"] == "un_member" for d in data) == 193
+    assert sum(d["status"] == "un_observer" for d in data) == 2
 
 
 def test_filter_continent_and_month(client):
@@ -136,14 +140,20 @@ def test_iso_alpha2(client):
 def test_dataset_integrity():
     import re
     from app import NATIONALDAYS as data
-    assert len(data) == 195
+    assert len(data) == 250
     for key in ("id", "iso", "iso2", "country"):
         values = [d[key] for d in data]
         assert len(values) == len(set(values)), f"duplicate {key}"
     for d in data:
         assert re.fullmatch(r"(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])", d["date"]), d["country"]
         assert d["event_date"] is None or re.fullmatch(r"-?\d{4}-\d{2}-\d{2}", d["event_date"]), d["country"]
-        assert re.fullmatch(r"[A-Z]{3}", d["currency_code"]), d["country"]
-        assert isinstance(d["creation"], int) and d["population"] > 0 and d["area"] > 0
+        assert d["area"] > 0, d["country"]
+        if d["population"] == 0:
+            # Uninhabited entries (Antarctica, Bouvet, ...) may have no currency or founding year
+            assert d["currency_code"] is None or re.fullmatch(r"[A-Z]{3}", d["currency_code"]), d["country"]
+            assert d["creation"] is None or isinstance(d["creation"], int), d["country"]
+        else:
+            assert re.fullmatch(r"[A-Z]{3}", d["currency_code"]), d["country"]
+            assert isinstance(d["creation"], int) and d["population"] > 0, d["country"]
         if d["event_year"] is not None and d["first_celebration"] is not None:
             assert d["first_celebration"] >= d["event_year"], d["country"]
